@@ -30,6 +30,11 @@ hash = "aefa6db7d068a2a490051c5314aa0d73724f441d229e54eaf42ad5d39d678168"
 metafile = true
 
 [[files]]
+file = "mods/essential-mod.pw.toml"
+hash = "23b1dd4570c6fee0f8f1db02ff404792a4efd783e9ecaa71075798ebfd50c47a"
+metafile = true
+
+[[files]]
 file = "mods/ferritecore.pw.toml"
 hash = "902bac905b93271f02bd0951a22bac06a3da24f5c237fcaeb469e14a7679e508"
 metafile = true

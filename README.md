@@ -30,7 +30,7 @@ Mała mapa to jeden zip, rozpakuj go tak samo.
 ## Co jest w paczce
 
 Mody: Aim Lab, Holoport, Path Marker, Police Car, Zegar cyfrowy, Noclip (mody Marcina), oraz Axiom,
-Sinytra Connector, Forgified Fabric API, CustomNPCs (Unofficial), Techguns (Unofficial Port),
+Sinytra Connector, Essential, Forgified Fabric API, CustomNPCs (Unofficial), Techguns (Unofficial Port),
 MrCrayfish's Vehicle (Unofficial), Framework, Entity Model/Texture Features + EMF Compat, ModernFix, FerriteCore.
 
 ## Dla Marcina: jak dodać nową wersję moda
