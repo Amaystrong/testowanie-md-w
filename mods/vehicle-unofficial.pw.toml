@@ -1,0 +1,13 @@
+name = "MrCrayfish's Vehicle Unofficial"
+filename = "Vehicle-Unofficial-1.20.1.20260413.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/cIL71c6X/versions/85Lkbw5U/Vehicle-Unofficial-1.20.1.20260413.jar"
+hash-format = "sha512"
+hash = "1883dc15738f266869694fd41c20a4a185d5eb6062bc6fd54ce1ec1bea7e05ff2b2f7fe3b33891d76b152c6750c4e627bf12a434523827c3ec68915615049bf8"
+
+[update]
+[update.modrinth]
+mod-id = "cIL71c6X"
+version = "85Lkbw5U"

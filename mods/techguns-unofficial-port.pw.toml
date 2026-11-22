@@ -1,0 +1,13 @@
+name = "Techguns [Unofficial Port]"
+filename = "techguns-1.2.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "85dc274c1c742e67db04d98f70838c8ff478e614"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9721304
+project-id = 1757529

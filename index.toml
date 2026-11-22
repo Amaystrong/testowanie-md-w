@@ -1,0 +1,102 @@
+hash-format = "sha256"
+
+[[files]]
+file = "mods/aimlab-1.17.0.jar"
+hash = "526f77e21e3923c49b10d7328d83c80f125556f7e06ee75a751a6c47ff98b29d"
+
+[[files]]
+file = "mods/axiom.pw.toml"
+hash = "059a497b3bc326f39e7585eca6021f04e9ce2545c21f00e57e72ef48643148ae"
+metafile = true
+
+[[files]]
+file = "mods/customnpcs-unofficial.pw.toml"
+hash = "9aa0d122d3cb317969c24a217fbefd813816d4caa9255f826c153c0413355526"
+metafile = true
+
+[[files]]
+file = "mods/emf-compat-core.pw.toml"
+hash = "3428af5b269c3f93b9a4c7d6755cf418369aaab27615dfde45a1bd7dbe7d4ad2"
+metafile = true
+
+[[files]]
+file = "mods/entity-model-features.pw.toml"
+hash = "6d614d824cb56b0c77408e3105b44e261a67c8d1410eb35d434bc782cb160cb3"
+metafile = true
+
+[[files]]
+file = "mods/entity-texture-features.pw.toml"
+hash = "aefa6db7d068a2a490051c5314aa0d73724f441d229e54eaf42ad5d39d678168"
+metafile = true
+
+[[files]]
+file = "mods/ferritecore.pw.toml"
+hash = "902bac905b93271f02bd0951a22bac06a3da24f5c237fcaeb469e14a7679e508"
+metafile = true
+
+[[files]]
+file = "mods/forgified-fabric-api.pw.toml"
+hash = "834dfc3eac7e8cbfe203578f1120ba298711f0426133950ce8972f5afc025a4d"
+metafile = true
+
+[[files]]
+file = "mods/framework.pw.toml"
+hash = "9e2175476f720e0b2d21b28e91873cecf5555648e2137310e1b7cf98f6b98ab8"
+metafile = true
+
+[[files]]
+file = "mods/holoport-1.10.3.jar"
+hash = "16f70d7fa946698b93ab418b9dd2fc29ad6f5997afe8275ab749df2ec2789685"
+
+[[files]]
+file = "mods/modernfix.pw.toml"
+hash = "99484c29e54191a2d32178d555ba03b1e4b6f93b3202f8bab6782d8146261b29"
+metafile = true
+
+[[files]]
+file = "mods/noclipmod-1.2.1.jar"
+hash = "49f04037f53bd37f631ecc23dd50c77b789aab725dc6145ac6ad7eb4d3db1169"
+
+[[files]]
+file = "mods/pathmarker-1.12.0.jar"
+hash = "711c79a96b039c9bbe519fb456e3f67d84f8e09df5ea57fa3156fc57c9f46a4b"
+
+[[files]]
+file = "mods/policecar-forge-1.20.1-2.5.0.jar"
+hash = "37e9116cd03c6487089eaf72a8d2105c413668e9edc356d4e9f0d47ec0f1c0b3"
+
+[[files]]
+file = "mods/sinytra-connector.pw.toml"
+hash = "28ec0fe825391261f68b2de4f7719f29dbc7b8c5a02876e6acfde975375cf3f4"
+metafile = true
+
+[[files]]
+file = "mods/techguns-unofficial-port.pw.toml"
+hash = "acd8715c49a35f2a193c5c1e4f600406a0bdb72270eefb57eca5cf4541081f41"
+metafile = true
+
+[[files]]
+file = "mods/vehicle-unofficial.pw.toml"
+hash = "33609e0b4eaf298cbdb02b552f830cb40506b15e5027f5ac8185f62144ce86c2"
+metafile = true
+
+[[files]]
+file = "mods/zegarcyfrowy-forge-1.20.1-1.4.1.jar"
+hash = "27a2dd03e272666a97b34be96f931e9f8a7c02e5fff74f1675462a69cae54b58"
+
+[[files]]
+file = "options.txt"
+hash = "a69bdd27df05e1f1e7c59134ab0db493046668b8719303b294398ddc1f9442b5"
+preserve = true
+
+[[files]]
+file = "resourcepacks/K-01-Grafit-Java.zip"
+hash = "d1570f889cf7cdb83283ce3496249f59b3e2e93af9a27328f5b709d77aef20c0"
+
+[[files]]
+file = "resourcepacks/Kobalt-PB01-Java-1.20.1-v2.zip"
+hash = "e7b0631f3d4659fb3c66d2d1dda476e2da7a04717292742a359651ba7c86be53"
+
+[[files]]
+file = "resourcepacks/PaintballMarker_Minecraft_1.20.1.zip"
+hash = "67d95c3490b121cb60d779c4b460679b9220a15f1ad874100a23e400d1531f68"

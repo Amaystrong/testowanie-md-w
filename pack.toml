@@ -1,0 +1,13 @@
+name = "Paczka modow"
+author = "Marcin"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "8375bcc1d226b3f2fb4d5e21958a86c49fd38bfd6651f38fb6b364af2f88f224"
+
+[versions]
+forge = "47.4.29"
+minecraft = "1.20.1"

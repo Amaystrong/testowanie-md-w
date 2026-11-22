@@ -1,0 +1,9 @@
+# Rzeczy w repo, ktorych instalator NIE pobiera do gry
+README.md
+INSTRUKCJA.md
+mapy/
+stare-wersje/
+narzedzia/
+prism/
+.github/
+.gitattributes

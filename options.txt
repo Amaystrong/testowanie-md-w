@@ -1,0 +1,1 @@
+resourcePacks:["vanilla","mod_resources","fabric","file/K-01-Grafit-Java.zip","file/PaintballMarker_Minecraft_1.20.1.zip","file/Kobalt-PB01-Java-1.20.1-v2.zip"]
