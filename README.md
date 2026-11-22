@@ -6,7 +6,7 @@ pobiera nowe i zmienione mody, więc nie trzeba niczego ściągać ręcznie.
 ## Instalacja (raz)
 
 1. Zainstaluj **Prism Launcher**: https://prismlauncher.org/download/ i zaloguj się kontem Microsoft.
-2. Pobierz plik **[Paczka-modow-Prism.zip](https://github.com/{{REPO}}/raw/main/prism/Paczka-modow-Prism.zip)**.
+2. Pobierz plik **[Paczka-modow-Prism.zip](https://github.com/Amaystrong/testowanie-md-w/raw/main/prism/Paczka-modow-Prism.zip)**.
 3. W Prism kliknij **Dodaj instancję → Importuj** i wskaż pobrany plik zip (albo po prostu przeciągnij zip na okno Prism).
 4. Uruchom instancję **Paczka modow**. Za pierwszym razem pojawi się okienko, które pobiera mody (kilka minut, ok. 110 MB). Potem gra wystartuje sama.
 
@@ -19,9 +19,9 @@ Paczki tekstur są włączone od razu przy pierwszej instalacji. Twoje ustawieni
 Mapy nie są aktualizowane automatycznie, bo nadpisałoby to Twoje postępy w grze. Ściągasz je raz:
 
 - **New World** (duża mapa) jest podzielona na dwie części, pobierz obie:
-  [część 1](https://github.com/{{REPO}}/raw/main/mapy/New%20World%20-%20czesc%201%20z%202.zip),
-  [część 2](https://github.com/{{REPO}}/raw/main/mapy/New%20World%20-%20czesc%202%20z%202.zip)
-- **New World (1)** (mała mapa): [pobierz](https://github.com/{{REPO}}/raw/main/mapy/New%20World%20(1).zip)
+  [część 1](https://github.com/Amaystrong/testowanie-md-w/raw/main/mapy/New%20World%20-%20czesc%201%20z%202.zip),
+  [część 2](https://github.com/Amaystrong/testowanie-md-w/raw/main/mapy/New%20World%20-%20czesc%202%20z%202.zip)
+- **New World (1)** (mała mapa): [pobierz](https://github.com/Amaystrong/testowanie-md-w/raw/main/mapy/New%20World%20(1).zip)
 
 Jak wgrać: w Prism kliknij prawym na instancję → **Folder** → wejdź do `saves` (jeśli go nie ma, utwórz).
 Rozpakuj tam oba pliki części mapy New World (Windows zapyta o scalenie folderów: wybierz **Tak**).
