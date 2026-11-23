@@ -16,19 +16,20 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.renderer.texture.TextureAtlas;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ClientPlayerNetworkEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import pl.marcin.serduszka.ModParticles;
 import pl.marcin.serduszka.SerduszkaMod;
 import pl.marcin.serduszka.network.EmoteRequestPacket;
 import pl.marcin.serduszka.network.Net;
@@ -41,12 +42,13 @@ public final class ClientEmotes {
     /** player UUID -> client tick when the emote started */
     private static final Map<UUID, Long> ACTIVE = new HashMap<>();
     private static final Set<Integer> PUSHED = new HashSet<>();
-    private static final ResourceLocation HEART = new ResourceLocation("minecraft", "heart");
     private static long clientTicks;
     private static CameraType previousCamera;
     /** ignore movement for a moment right after starting, so the key press itself does not cancel it */
     private static int graceTicks;
-    private static boolean particlesBroken;
+    private static boolean loggedFirst;
+    private static boolean loggedError;
+    private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger("serduszka");
 
     private ClientEmotes() {}
 
@@ -108,6 +110,11 @@ public final class ClientEmotes {
         public static void registerKeys(RegisterKeyMappingsEvent event) {
             event.register(TOGGLE_KEY);
         }
+
+        @SubscribeEvent
+        public static void registerParticles(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(ModParticles.HEART.get(), HeartParticle.Provider::new);
+        }
     }
 
     @SubscribeEvent
@@ -138,28 +145,13 @@ public final class ClientEmotes {
         }
 
         if (mc.isPaused() || ACTIVE.isEmpty()) return;
-        TextureAtlasSprite sprite = heartSprite(mc);
-        if (sprite == null) return;
         RandomSource rnd = mc.level.random;
         for (AbstractClientPlayer p : mc.level.players()) {
             if (!isActive(p.getUUID()) || p.isInvisible()) continue;
             if (p == player && mc.options.getCameraType().isFirstPerson()) continue;
-            int count = rnd.nextFloat() < 0.35F ? 2 : 1;
-            for (int i = 0; i < count; i++) {
-                spawnHeart(mc, p, rnd, sprite);
+            if (rnd.nextFloat() < 0.3F) {
+                spawnHeart(mc, p, rnd);
             }
-        }
-    }
-
-    /** Heart sprite from the particle atlas (via the texture manager; ModelManager does not own that atlas). */
-    private static TextureAtlasSprite heartSprite(Minecraft mc) {
-        if (particlesBroken) return null;
-        try {
-            return mc.getTextureAtlas(TextureAtlas.LOCATION_PARTICLES).apply(HEART);
-        } catch (Throwable t) {
-            particlesBroken = true;
-            org.slf4j.LoggerFactory.getLogger("serduszka").error("Serduszka: heart texture unavailable, particles disabled", t);
-            return null;
         }
     }
 
@@ -170,16 +162,32 @@ public final class ClientEmotes {
                 || mc.options.keyAttack.isDown() || mc.options.keyUse.isDown();
     }
 
-    private static void spawnHeart(Minecraft mc, Player p, RandomSource rnd, TextureAtlasSprite sprite) {
+    private static void spawnHeart(Minecraft mc, Player p, RandomSource rnd) {
         double angle = rnd.nextDouble() * Math.PI * 2;
-        double radius = 0.25 + rnd.nextDouble() * 0.45;
+        double radius = 0.3 + rnd.nextDouble() * 0.4;
         double x = p.getX() + Math.cos(angle) * radius;
         double z = p.getZ() + Math.sin(angle) * radius;
-        double y = p.getY() + 1.45 + rnd.nextDouble() * 0.75;
-        double vx = (rnd.nextDouble() - 0.5) * 0.01;
-        double vz = (rnd.nextDouble() - 0.5) * 0.01;
-        double vy = 0.012 + rnd.nextDouble() * 0.02;
-        mc.particleEngine.add(new HeartParticle(mc.level, x, y, z, vx, vy, vz, sprite));
+        double y = p.getY() + 1.4 + rnd.nextDouble() * 0.7;
+        double vx = (rnd.nextDouble() - 0.5) * 0.004;
+        double vz = (rnd.nextDouble() - 0.5) * 0.004;
+        double vy = 0.006 + rnd.nextDouble() * 0.01;
+        Particle particle = null;
+        try {
+            particle = mc.particleEngine.createParticle(ModParticles.HEART.get(), x, y, z, vx, vy, vz);
+        } catch (Throwable t) {
+            if (!loggedError) {
+                loggedError = true;
+                LOGGER.error("Serduszka: could not create heart particle", t);
+            }
+        }
+        if (particle == null) {
+            // fallback: vanilla heart
+            particle = mc.particleEngine.createParticle(ParticleTypes.HEART, x, y, z, vx, vy, vz);
+        }
+        if (!loggedFirst) {
+            loggedFirst = true;
+            LOGGER.info("Serduszka: first heart particle spawned: {}", particle);
+        }
     }
 
     @SubscribeEvent
