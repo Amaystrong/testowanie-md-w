@@ -29,7 +29,7 @@ Mała mapa to jeden zip, rozpakuj go tak samo.
 
 ## Co jest w paczce
 
-Mody: Aim Lab, Holoport, Path Marker, Police Car, Zegar cyfrowy, Noclip, Serduszka Emote (mody Marcina), oraz Axiom,
+Mody: Aim Lab, Holoport, Path Marker, Police Car, Zegar cyfrowy, Noclip, Serduszka Emote, Lokacje (mody Marcina), oraz Axiom,
 Sinytra Connector, Essential, Forgified Fabric API, CustomNPCs (Unofficial), Techguns (Unofficial Port),
 MrCrayfish's Vehicle (Unofficial), Framework, Entity Model/Texture Features + EMF Compat, ModernFix, FerriteCore.
 
