@@ -71,6 +71,10 @@ file = "mods/policecar-forge-1.20.1-2.5.0.jar"
 hash = "37e9116cd03c6487089eaf72a8d2105c413668e9edc356d4e9f0d47ec0f1c0b3"
 
 [[files]]
+file = "mods/serduszka-1.20.1-1.0.2.jar"
+hash = "b56ade0821883a515da35b99e726adc9942b926fd00b75ee48654eecc73b5207"
+
+[[files]]
 file = "mods/sinytra-connector.pw.toml"
 hash = "28ec0fe825391261f68b2de4f7719f29dbc7b8c5a02876e6acfde975375cf3f4"
 metafile = true
