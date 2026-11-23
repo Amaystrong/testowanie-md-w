@@ -46,6 +46,7 @@ public final class ClientEmotes {
     private static CameraType previousCamera;
     /** ignore movement for a moment right after starting, so the key press itself does not cancel it */
     private static int graceTicks;
+    private static boolean particlesBroken;
 
     private ClientEmotes() {}
 
@@ -137,7 +138,8 @@ public final class ClientEmotes {
         }
 
         if (mc.isPaused() || ACTIVE.isEmpty()) return;
-        TextureAtlasSprite sprite = mc.getModelManager().getAtlas(TextureAtlas.LOCATION_PARTICLES).getSprite(HEART);
+        TextureAtlasSprite sprite = heartSprite(mc);
+        if (sprite == null) return;
         RandomSource rnd = mc.level.random;
         for (AbstractClientPlayer p : mc.level.players()) {
             if (!isActive(p.getUUID()) || p.isInvisible()) continue;
@@ -146,6 +148,18 @@ public final class ClientEmotes {
             for (int i = 0; i < count; i++) {
                 spawnHeart(mc, p, rnd, sprite);
             }
+        }
+    }
+
+    /** Heart sprite from the particle atlas (via the texture manager; ModelManager does not own that atlas). */
+    private static TextureAtlasSprite heartSprite(Minecraft mc) {
+        if (particlesBroken) return null;
+        try {
+            return mc.getTextureAtlas(TextureAtlas.LOCATION_PARTICLES).apply(HEART);
+        } catch (Throwable t) {
+            particlesBroken = true;
+            org.slf4j.LoggerFactory.getLogger("serduszka").error("Serduszka: heart texture unavailable, particles disabled", t);
+            return null;
         }
     }
 

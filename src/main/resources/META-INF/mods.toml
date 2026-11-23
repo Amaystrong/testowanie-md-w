@@ -4,7 +4,7 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="serduszka"
-version="1.0.0"
+version="1.0.1"
 displayName="Serduszka Emote"
 authors="Marcin"
 description='''Zapętlona animacja zakochanej postaci z sercami, włączana klawiszem (domyślnie G).'''
