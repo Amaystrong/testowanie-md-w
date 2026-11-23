@@ -1,0 +1,51 @@
+plugins {
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.+'
+}
+
+version = '1.0.0'
+group = 'pl.marcin.serduszka'
+base { archivesName = 'serduszka-1.20.1' }
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    runs {
+        client {
+            workingDirectory project.file('run')
+            mods { serduszka { source sourceSets.main } }
+        }
+        server {
+            workingDirectory project.file('run')
+            mods { serduszka { source sourceSets.main } }
+        }
+    }
+}
+
+mixin {
+    add sourceSets.main, 'serduszka.refmap.json'
+    config 'serduszka.mixins.json'
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.3.0'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+jar {
+    manifest {
+        attributes([
+            'Specification-Title'     : 'serduszka',
+            'Specification-Vendor'    : 'Marcin',
+            'Specification-Version'   : '1',
+            'Implementation-Title'    : project.name,
+            'Implementation-Version'  : project.version,
+            'MixinConfigs'            : 'serduszka.mixins.json'
+        ])
+    }
+}
+jar.finalizedBy('reobfJar')
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
