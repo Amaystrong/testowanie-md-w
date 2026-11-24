@@ -54,8 +54,8 @@ file = "mods/holoport-1.10.3.jar"
 hash = "16f70d7fa946698b93ab418b9dd2fc29ad6f5997afe8275ab749df2ec2789685"
 
 [[files]]
-file = "mods/lokacje-1.12.1.jar"
-hash = "3e8fd1201745c166a01b04f62c2eb28b447a2abaf3868db0ff7868daf40c947f"
+file = "mods/lokacje-1.12.2.jar"
+hash = "972e70a507fbd59361c318ff53f3ba72f1c4e6b62a1b981c7e7c044efc2c67d7"
 
 [[files]]
 file = "mods/modernfix.pw.toml"
